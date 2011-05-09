@@ -26,4 +26,5 @@ ro.confg.hw_appfsversion=M860V100R001C177B258SP01_SYSIMG
 
 # Enable default end key behavior
 # 0:nothing; 1:go home; 2:go sleep; 3:go home and then sleep.
+ro.config.endkeybehavior=true
 ro.config.hw_defaultEndBtnFunc=1
