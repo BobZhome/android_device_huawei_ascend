@@ -186,7 +186,6 @@ PRODUCT_COPY_FILES += \
 
 # OEM RPC
 PRODUCT_COPY_FILES += \
-    vendor/huawei/ascend/proprietary/port-bridge:system/bin/port-bridge \
     vendor/huawei/ascend/proprietary/modempre:system/bin/modempre \
     vendor/huawei/ascend/proprietary/oem_rpc_svc:system/bin/oem_rpc_svc \
     vendor/huawei/ascend/proprietary/libhwrpc.so:system/lib/libhwrpc.so \
