@@ -36,7 +36,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     copybit.M860 \
     gps.M860 \
-    sensors.M860 \
     libRS \
     hwprops \
     rzscontrol \
@@ -153,7 +152,8 @@ PRODUCT_COPY_FILES += \
 # HW
 PRODUCT_COPY_FILES += \
     vendor/huawei/ascend/proprietary/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
-    vendor/huawei/ascend/proprietary/lights.msm7k.so:system/lib/hw/lights.msm7k.so
+    vendor/huawei/ascend/proprietary/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
+    vendor/huawei/ascend/proprietary/sensors.default.so:system/lib/hw/sensors.default.so
 
 # GPS
 PRODUCT_COPY_FILES += \
