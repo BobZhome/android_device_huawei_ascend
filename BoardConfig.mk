@@ -27,6 +27,12 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv6j
 
 TARGET_NO_BOOTLOADER := true
+TARGET_NO_KERNEL := false
+TARGET_NO_RECOVERY := false
+TARGET_NO_RADIOIMAGE := true
+
+# Recovery
+TARGET_PREBUILT_RECOVERY_KERNEL := device/huawei/ascend/recovery_kernel
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT

@@ -52,6 +52,7 @@ on boot
     chown radio system /dev/oncrpc/30000019:821a1945
     chown radio system /dev/oncrpc/3000001b:fae9727e
     chown radio system /dev/oncrpc/3000001d:ba845703
+    chown radio system /dev/oncrpc/30000048:00010000
     chown radio system /dev/oncrpc/3000003c:cc5478d4
     chown radio system /dev/oncrpc/3000005b:a60286b0
     chown radio system /dev/oncrpc/3000fe00:a82d4624
