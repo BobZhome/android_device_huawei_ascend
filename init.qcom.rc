@@ -185,5 +185,5 @@ service dhcpcd_eth0 /system/bin/dhcpcd -ABKL eth0
     
 # Compass / Accelerometer daemon
 service akmd /system/bin/akmd2
-    disabled
-    oneshot
+    user compass
+    group compass misc input
