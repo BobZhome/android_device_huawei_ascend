@@ -45,15 +45,27 @@
       <value>320000</value>
       <value>480000</value>
       <value>600000</value>
+      <value>614000</value>
+      <value>633200</value>
+      <value>652400</value>
+      <value>671600</value>
+      <value>690800</value>
+      <value>710000</value>
   </array>
   <!-- Power consumption when CPU is idle -->
   <item name="cpu.idle">2</item>
   <!-- Power consumption at different speeds -->
   <array name="cpu.active">
-		<value>66.6</value>
-        <value>84</value>
-        <value>90.8</value>
-        <value>96</value>
-        <value>105</value>
+      <value>66.6</value>
+      <value>84</value>
+      <value>90.8</value>
+      <value>96</value>
+      <value>105</value>
+      <value>111.5</value>
+      <value>117.3</value>
+      <value>123.6</value>
+      <value>134.5</value>
+      <value>141.8</value>
+      <value>148.5</value>
   </array>
 </device>
