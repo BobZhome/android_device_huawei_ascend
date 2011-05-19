@@ -36,6 +36,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     copybit.M860 \
     gps.M860 \
+    libcamera \
     libRS \
     hwprops \
     rzscontrol \
@@ -131,8 +132,6 @@ PRODUCT_COPY_FILES += \
 # Proprietary hardware related
 PRODUCT_COPY_FILES += \
     vendor/huawei/ascend/proprietary/akmd2:system/bin/akmd2 \
-    vendor/huawei/ascend/proprietary/libcamera.so:obj/lib/libcamera.so \
-    vendor/huawei/ascend/proprietary/libcamera.so:system/lib/libcamera.so \
     vendor/huawei/ascend/proprietary/libqcamera.so:system/lib/libqcamera.so \
     vendor/huawei/ascend/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \
     vendor/huawei/ascend/proprietary/libmmipl.so:system/lib/libmmipl.so \
