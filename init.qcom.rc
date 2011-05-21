@@ -117,7 +117,7 @@ on boot
     chmod 0777 /sys/kernel/logger/log_radio/priority
 
     # Increase read throughput from sd card
-    write /sys/block/mmcblk0/bdi/read_ahead_kb 2048
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 4096
 
     # Enable low memory killer to check file pages
     write /sys/module/lowmemorykiller/parameters/minfile 0,0,0,4632,5632,6144
