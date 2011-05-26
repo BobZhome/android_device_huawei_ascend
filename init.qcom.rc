@@ -183,7 +183,11 @@ service wpa_supplicant /system/bin/wpa_supplicant -Dwext -ieth0 -W -c /data/misc
 service dhcpcd_eth0 /system/bin/dhcpcd -ABKL eth0
     disabled
     oneshot
-    
+
+service iprenew_eth0 /system/bin/dhcpcd -n
+    disabled
+    oneshot
+
 # Compass / Accelerometer daemon
 service akmd /system/bin/akmd2
     user compass
