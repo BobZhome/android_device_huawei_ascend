@@ -21,6 +21,6 @@ ro.media.dec.jpeg.memcap=20000000
 
 # This will go away someday.
 # Debugging oem_rpc_svc.
-ro.confg.hw_appsbootversion=M860V100R001C177B258SP01_APPSBOOT
-ro.confg.hw_appversion=M860V100R001C177B258SP01_KERNEL
-ro.confg.hw_appfsversion=M860V100R001C177B258SP01_SYSIMG
+ro.confg.hw_appsbootversion=M860V100R001C177B617_APPSBOOT
+ro.confg.hw_appversion=M860V100R001C177B617_KERNEL
+ro.confg.hw_appfsversion=M860V100R001C177B617_SYSIMG
