@@ -6,7 +6,6 @@ DIRS="
 bin
 lib/hw
 "
-
 for DIR in $DIRS; do
 	mkdir -p ../../../vendor/huawei/ascend/proprietary/$DIR
 done
