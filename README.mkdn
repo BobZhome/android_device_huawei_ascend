@@ -1,24 +1,34 @@
 HOW-TO BUILD:
 =============
 
-**This short guide assumes you're on Ubuntu 10.10**
+**This short guide assumes you're on Ubuntu 11.04**
 
 Getting the (right) source
 --------------------------
 
-Ensure that you have repo installed. Download and install repo like so:
+First, we need to create directories for the build:
+
+    $ mkdir -p ~/bin
+
+    $ mkdir -p ~/android/system
+
+Now we'll need repo. Let's download it and make it executable:
 
     $ curl http://android.git.kernel.org/repo > ~/bin/repo
     
     $ chmod a+x ~/bin/repo
 
-Now, we create our build directories and pull the right source:
+Log out and back in so the changes take effect.
+
+Now initialized the repository and pull the source (with my repos attached):
 
     $ cd ~/android/system/
     
     $ repo init -u git://github.com/isaacj87/android.git -b gingerbread
     
     $ repo sync -j16
+
+Depending on your connection, this might take awhile.
 
 Extract necessary binaries and proprietary files
 ------------------------------------------------
