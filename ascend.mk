@@ -55,7 +55,7 @@ PRODUCT_COPY_FILES += \
 
 # vold
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/files/etc/vold.fstab:system/etc/vold.fstab
+    device/huawei/ascend/include/etc/vold.fstab:system/etc/vold.fstab
 
 # Compcache module
 PRODUCT_COPY_FILES += \
@@ -63,11 +63,11 @@ PRODUCT_COPY_FILES += \
 
 # Board-specific init
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/files/initlogo.rle:root/initlogo.rle
+    device/huawei/ascend/include/initlogo.rle:root/initlogo.rle
 
 # DHCP config for wifi
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/files/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
+    device/huawei/ascend/include/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
 
 PRODUCT_COPY_FILES += \
     device/huawei/ascend/ueventd.qcom.rc:root/ueventd.qcom.rc
@@ -118,11 +118,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # media configuration xml file
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/files/etc/media_profiles.xml:system/etc/media_profiles.xml
+    device/huawei/ascend/include/etc/media_profiles.xml:system/etc/media_profiles.xml
 
 # wpa_supplicant configuration file
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/files/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+    device/huawei/ascend/include/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 # Proprietary hardware related
 PRODUCT_COPY_FILES += \
@@ -137,8 +137,8 @@ PRODUCT_COPY_FILES += \
 
 # Sound and OMX
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/files/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
-    device/huawei/ascend/files/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
+    device/huawei/ascend/include/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
+    device/huawei/ascend/include/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
     vendor/huawei/ascend/proprietary/libaudioeq.so:system/lib/libaudioeq.so \
     vendor/huawei/ascend/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
     vendor/huawei/ascend/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
@@ -153,11 +153,11 @@ PRODUCT_COPY_FILES += \
 
 # GPS
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/files/etc/gps.conf:system/etc/gps.conf
+    device/huawei/ascend/include/etc/gps.conf:system/etc/gps.conf
 
 # Proprietary RIL related
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/files/etc/apns-conf.xml:system/etc/apns-conf.xml \
+    device/huawei/ascend/include/etc/apns-conf.xml:system/etc/apns-conf.xml \
     vendor/huawei/ascend/proprietary/libauth.so:system/lib/libauth.so \
     vendor/huawei/ascend/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
     vendor/huawei/ascend/proprietary/libril.so:system/lib/libril.so \
@@ -191,8 +191,8 @@ PRODUCT_COPY_FILES += \
 ## Wifi related
 PRODUCT_COPY_FILES += \
     device/huawei/ascend/modules/bcm4319.ko:system/lib/modules/bcm4319.ko \
-    device/huawei/ascend/files/etc/firmware/fw_bcm4319.bin:system/etc/firmware/fw_bcm4319.bin \
-    device/huawei/ascend/files/etc/firmware/nvram.txt:system/etc/firmware/nvram.txt
+    device/huawei/ascend/include/etc/firmware/fw_bcm4319.bin:system/etc/firmware/fw_bcm4319.bin \
+    device/huawei/ascend/include/etc/firmware/nvram.txt:system/etc/firmware/nvram.txt
 
 $(call inherit-product, build/target/product/small_base.mk)
 
