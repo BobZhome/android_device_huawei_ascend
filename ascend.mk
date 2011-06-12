@@ -199,7 +199,7 @@ $(call inherit-product, build/target/product/small_base.mk)
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := generic_ascend
 PRODUCT_DEVICE := ascend
-PRODUCT_MODEL := Huawei Ascend
+PRODUCT_MODEL := Huawei-M860
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-huawei-us \
