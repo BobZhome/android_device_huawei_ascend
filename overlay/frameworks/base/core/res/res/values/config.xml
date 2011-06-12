@@ -157,8 +157,8 @@
     <!-- The default iface on which to monitor data use -->
     <string name="config_datause_iface">rmnet0</string>
 
-    <!-- Enables the Gingerbread electron-beam animation. -->
-    <bool name="config_animateScreenLights">false</bool>
+    <!-- Disables/enables the Gingerbread electron-beam animation. -->
+    <bool name="config_animateScreenLights">true</bool>
 
     <!-- Enable the screen-on animation -->
     <bool name="config_enableScreenOnAnimation">false</bool>
