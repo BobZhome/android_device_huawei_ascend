@@ -4,6 +4,7 @@ mkdir -p ../../../vendor/huawei/ascend/proprietary
 
 DIRS="
 bin
+etc
 lib/hw
 "
 for DIR in $DIRS; do
@@ -56,6 +57,8 @@ lib/libqcamera.so
 lib/libmmjpeg.so
 lib/libmmipl.so
 lib/libmmprocess.so
+
+etc/init.qcom.bt.sh
 "
 for FILE in $FILES; do
 	adb pull system/$FILE ../../../vendor/huawei/ascend/proprietary/$FILE

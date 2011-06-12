@@ -116,7 +116,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dexopt-data-only=1
 
-# media configuration xml file
+# Media configuration xml file
 PRODUCT_COPY_FILES += \
     device/huawei/ascend/include/etc/media_profiles.xml:system/etc/media_profiles.xml
 
@@ -126,30 +126,33 @@ PRODUCT_COPY_FILES += \
 
 # Proprietary hardware related
 PRODUCT_COPY_FILES += \
-    vendor/huawei/ascend/proprietary/akmd2:system/bin/akmd2 \
-    vendor/huawei/ascend/proprietary/libcamera.so:obj/lib/libcamera.so \
-    vendor/huawei/ascend/proprietary/libcamera.so:system/lib/libcamera.so \
-    vendor/huawei/ascend/proprietary/libqcamera.so:system/lib/libqcamera.so \
-    vendor/huawei/ascend/proprietary/libmmjpeg.so:system/lib/libmmjpeg.so \
-    vendor/huawei/ascend/proprietary/libmmipl.so:system/lib/libmmipl.so \
-    vendor/huawei/ascend/proprietary/libmmprocess.so:system/lib/libmmprocess.so \
-    vendor/huawei/ascend/proprietary/init.qcom.bt.sh:system/etc/init.qcom.bt.sh
+    vendor/huawei/ascend/proprietary/lib/libcamera.so:obj/lib/libcamera.so \
+    vendor/huawei/ascend/proprietary/lib/libcamera.so:system/lib/libcamera.so \
+    vendor/huawei/ascend/proprietary/lib/libqcamera.so:system/lib/libqcamera.so \
+    vendor/huawei/ascend/proprietary/lib/libmmjpeg.so:system/lib/libmmjpeg.so \
+    vendor/huawei/ascend/proprietary/lib/libmmipl.so:system/lib/libmmipl.so \
+    vendor/huawei/ascend/proprietary/lib/libmmprocess.so:system/lib/libmmprocess.so \
+    vendor/huawei/ascend/proprietary/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh
 
 # Sound and OMX
 PRODUCT_COPY_FILES += \
     device/huawei/ascend/include/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
     device/huawei/ascend/include/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
-    vendor/huawei/ascend/proprietary/libaudioeq.so:system/lib/libaudioeq.so \
-    vendor/huawei/ascend/proprietary/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
-    vendor/huawei/ascend/proprietary/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
-    vendor/huawei/ascend/proprietary/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
-    vendor/huawei/ascend/proprietary/libOmxVidEnc.so:system/lib/libOmxVidEnc.so
+    vendor/huawei/ascend/proprietary/lib/libaudioeq.so:system/lib/libaudioeq.so \
+    vendor/huawei/ascend/proprietary/lib/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
+    vendor/huawei/ascend/proprietary/lib/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
+    vendor/huawei/ascend/proprietary/lib/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
+    vendor/huawei/ascend/proprietary/lib/libOmxVidEnc.so:system/lib/libOmxVidEnc.so
 
-# HW
+# Lights and graphics
 PRODUCT_COPY_FILES += \
-    vendor/huawei/ascend/proprietary/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
-    vendor/huawei/ascend/proprietary/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
-    vendor/huawei/ascend/proprietary/sensors.default.so:system/lib/hw/sensors.default.so
+    vendor/huawei/ascend/proprietary/lib/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
+    vendor/huawei/ascend/proprietary/lib/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so
+
+# Sensors
+PRODUCT_COPY_FILES += \
+    vendor/huawei/ascend/proprietary/bin/akmd2:system/bin/akmd2 \
+    vendor/huawei/ascend/proprietary/lib/hw/sensors.default.so:system/lib/hw/sensors.default.so
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -158,35 +161,35 @@ PRODUCT_COPY_FILES += \
 # Proprietary RIL related
 PRODUCT_COPY_FILES += \
     device/huawei/ascend/include/etc/apns-conf.xml:system/etc/apns-conf.xml \
-    vendor/huawei/ascend/proprietary/libauth.so:system/lib/libauth.so \
-    vendor/huawei/ascend/proprietary/libril-qc-1.so:system/lib/libril-qc-1.so \
-    vendor/huawei/ascend/proprietary/libril.so:system/lib/libril.so \
-    vendor/huawei/ascend/proprietary/liboncrpc.so:system/lib/liboncrpc.so \
-    vendor/huawei/ascend/proprietary/libdsm.so:system/lib/libdsm.so \
-    vendor/huawei/ascend/proprietary/libqueue.so:system/lib/libqueue.so \
-    vendor/huawei/ascend/proprietary/libcm.so:system/lib/libcm.so \
-    vendor/huawei/ascend/proprietary/libdiag.so:system/lib/libdiag.so \
-    vendor/huawei/ascend/proprietary/libmmgsdilib.so:system/lib/libmmgsdilib.so \
-    vendor/huawei/ascend/proprietary/libgsdi_exp.so:system/lib/libgsdi_exp.so \
-    vendor/huawei/ascend/proprietary/libgstk_exp.so:system/lib/libgstk_exp.so \
-    vendor/huawei/ascend/proprietary/libwms.so:system/lib/libwms.so \
-    vendor/huawei/ascend/proprietary/libnv.so:system/lib/libnv.so \
-    vendor/huawei/ascend/proprietary/libwmsts.so:system/lib/libwmsts.so \
-    vendor/huawei/ascend/proprietary/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
-    vendor/huawei/ascend/proprietary/libdss.so:system/lib/libdss.so \
-    vendor/huawei/ascend/proprietary/libdll.so:system/lib/libdll.so \
-    vendor/huawei/ascend/proprietary/libqmi.so:system/lib/libqmi.so \
-    vendor/huawei/ascend/proprietary/libpbmlib.so:system/lib/libpbmlib.so \
-    vendor/huawei/ascend/proprietary/libwpa_client.so:system/lib/libwpa_client.so \
-    vendor/huawei/ascend/proprietary/qmuxd:system/bin/qmuxd \
-    vendor/huawei/ascend/proprietary/hci_qcomm_init:system/bin/hci_qcomm_init
+    vendor/huawei/ascend/proprietary/lib/libauth.so:system/lib/libauth.so \
+    vendor/huawei/ascend/proprietary/lib/libril-qc-1.so:system/lib/libril-qc-1.so \
+    vendor/huawei/ascend/proprietary/lib/libril.so:system/lib/libril.so \
+    vendor/huawei/ascend/proprietary/lib/liboncrpc.so:system/lib/liboncrpc.so \
+    vendor/huawei/ascend/proprietary/lib/libdsm.so:system/lib/libdsm.so \
+    vendor/huawei/ascend/proprietary/lib/libqueue.so:system/lib/libqueue.so \
+    vendor/huawei/ascend/proprietary/lib/libcm.so:system/lib/libcm.so \
+    vendor/huawei/ascend/proprietary/lib/libdiag.so:system/lib/libdiag.so \
+    vendor/huawei/ascend/proprietary/lib/libmmgsdilib.so:system/lib/libmmgsdilib.so \
+    vendor/huawei/ascend/proprietary/lib/libgsdi_exp.so:system/lib/libgsdi_exp.so \
+    vendor/huawei/ascend/proprietary/lib/libgstk_exp.so:system/lib/libgstk_exp.so \
+    vendor/huawei/ascend/proprietary/lib/libwms.so:system/lib/libwms.so \
+    vendor/huawei/ascend/proprietary/lib/libnv.so:system/lib/libnv.so \
+    vendor/huawei/ascend/proprietary/lib/libwmsts.so:system/lib/libwmsts.so \
+    vendor/huawei/ascend/proprietary/lib/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so \
+    vendor/huawei/ascend/proprietary/lib/libdss.so:system/lib/libdss.so \
+    vendor/huawei/ascend/proprietary/lib/libdll.so:system/lib/libdll.so \
+    vendor/huawei/ascend/proprietary/lib/libqmi.so:system/lib/libqmi.so \
+    vendor/huawei/ascend/proprietary/lib/libpbmlib.so:system/lib/libpbmlib.so \
+    vendor/huawei/ascend/proprietary/lib/libwpa_client.so:system/lib/libwpa_client.so \
+    vendor/huawei/ascend/proprietary/bin/qmuxd:system/bin/qmuxd \
+    vendor/huawei/ascend/proprietary/bin/hci_qcomm_init:system/bin/hci_qcomm_init
 
 # OEM RPC
 PRODUCT_COPY_FILES += \
-    vendor/huawei/ascend/proprietary/modempre:system/bin/modempre \
-    vendor/huawei/ascend/proprietary/oem_rpc_svc:system/bin/oem_rpc_svc \
-    vendor/huawei/ascend/proprietary/libhwrpc.so:system/lib/libhwrpc.so \
-    vendor/huawei/ascend/proprietary/liboem_rapi.so:system/lib/liboem_rapi.so
+    vendor/huawei/ascend/proprietary/bin/modempre:system/bin/modempre \
+    vendor/huawei/ascend/proprietary/bin/oem_rpc_svc:system/bin/oem_rpc_svc \
+    vendor/huawei/ascend/proprietary/lib/libhwrpc.so:system/lib/libhwrpc.so \
+    vendor/huawei/ascend/proprietary/lib/liboem_rapi.so:system/lib/liboem_rapi.so
 
 ## Wifi related
 PRODUCT_COPY_FILES += \
