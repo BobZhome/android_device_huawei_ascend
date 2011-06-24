@@ -19,7 +19,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_small.mk)
 # The gps config appropriate for this device
 #$(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-$(call inherit-product-if-exists, vendor/huawei/ascend/ascend-vendor.mk)
+#$(call inherit-product-if-exists, vendor/huawei/ascend/ascend-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/huawei/ascend/overlay
 
@@ -91,7 +91,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PROPERTY_OVERRIDES := \
     wifi.interface=eth0 \
-    wifi.supplicant_scan_interval=60 \
+    wifi.supplicant_scan_interval=90 \
     ro.sf.lcd_density=160 \
     ro.com.android.dataroaming=false
 
