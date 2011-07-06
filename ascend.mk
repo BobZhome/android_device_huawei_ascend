@@ -47,7 +47,7 @@ PRODUCT_PACKAGES += \
 # Live Wallpapers
 PRODUCT_PACKAGES += \
     librs_jni \
-    LiveWallpapersPicker
+    LiveWallpapersPicker \
 
 # Live Wallpapers support
 PRODUCT_COPY_FILES += \
@@ -145,9 +145,9 @@ PRODUCT_COPY_FILES += \
     vendor/huawei/ascend/proprietary/lib/libOmxVidEnc.so:system/lib/libOmxVidEnc.so
 
 # Lights and graphics
-PRODUCT_COPY_FILES += \
-    vendor/huawei/ascend/proprietary/lib/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
-    vendor/huawei/ascend/proprietary/lib/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so
+#PRODUCT_COPY_FILES += \
+#    vendor/huawei/ascend/proprietary/lib/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
+#    vendor/huawei/ascend/proprietary/lib/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so
 
 # Sensors
 PRODUCT_COPY_FILES += \
@@ -163,7 +163,6 @@ PRODUCT_COPY_FILES += \
     device/huawei/ascend/include/etc/apns-conf.xml:system/etc/apns-conf.xml \
     vendor/huawei/ascend/proprietary/lib/libauth.so:system/lib/libauth.so \
     vendor/huawei/ascend/proprietary/lib/libril-qc-1.so:system/lib/libril-qc-1.so \
-    vendor/huawei/ascend/proprietary/lib/libril.so:system/lib/libril.so \
     vendor/huawei/ascend/proprietary/lib/liboncrpc.so:system/lib/liboncrpc.so \
     vendor/huawei/ascend/proprietary/lib/libdsm.so:system/lib/libdsm.so \
     vendor/huawei/ascend/proprietary/lib/libqueue.so:system/lib/libqueue.so \
@@ -180,9 +179,10 @@ PRODUCT_COPY_FILES += \
     vendor/huawei/ascend/proprietary/lib/libdll.so:system/lib/libdll.so \
     vendor/huawei/ascend/proprietary/lib/libqmi.so:system/lib/libqmi.so \
     vendor/huawei/ascend/proprietary/lib/libpbmlib.so:system/lib/libpbmlib.so \
-    vendor/huawei/ascend/proprietary/lib/libwpa_client.so:system/lib/libwpa_client.so \
     vendor/huawei/ascend/proprietary/bin/qmuxd:system/bin/qmuxd \
     vendor/huawei/ascend/proprietary/bin/hci_qcomm_init:system/bin/hci_qcomm_init
+#    vendor/huawei/ascend/proprietary/lib/libril.so:system/lib/libril.so \
+#    vendor/huawei/ascend/proprietary/lib/libwpa_client.so:system/lib/libwpa_client.so \
 
 # OEM RPC
 PRODUCT_COPY_FILES += \
