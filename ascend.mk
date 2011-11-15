@@ -23,9 +23,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_small.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/huawei/ascend/overlay
 
-
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/huawei/ascend/kernel
+	LOCAL_KERNEL := device/huawei/ascend/zImage
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -83,6 +82,7 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
     frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/base/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
+    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
@@ -122,7 +122,9 @@ PRODUCT_COPY_FILES += \
 
 # wpa_supplicant configuration file
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/include/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+    device/huawei/ascend/include/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    device/huawei/ascend/modules/tun.ko:system/lib/modules/tun.ko \
+    device/huawei/ascend/modules/cifs.ko:system/lib/modules/cifs.ko \
 
 # Proprietary hardware related
 PRODUCT_COPY_FILES += \
@@ -140,14 +142,29 @@ PRODUCT_COPY_FILES += \
     device/huawei/ascend/include/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
     vendor/huawei/ascend/proprietary/lib/libaudioeq.so:system/lib/libaudioeq.so \
     vendor/huawei/ascend/proprietary/lib/libmm-adspsvc.so:system/lib/libmm-adspsvc.so \
+    vendor/huawei/ascend/proprietary/lib/libomx_aacdec_sharedlibrary.so:system/lib/libomx_aacdec_sharedlibrary.so \
+    vendor/huawei/ascend/proprietary/lib/libomx_amrdec_sharedlibrary.so:system/lib/libomx_amrdec_sharedlibrary.so \
+    vendor/huawei/ascend/proprietary/lib/libomx_amrenc_sharedlibrary.so:system/lib/libomx_amrenc_sharedlibrary.so \
+    vendor/huawei/ascend/proprietary/lib/libomx_avcdec_sharedlibrary.so:system/lib/libomx_avcdec_sharedlibrary.so \
+    vendor/huawei/ascend/proprietary/lib/libOmxCore.so:system/lib/libOmxCore.so \
     vendor/huawei/ascend/proprietary/lib/libOmxH264Dec.so:system/lib/libOmxH264Dec.so \
+    vendor/huawei/ascend/proprietary/lib/libomx_m4vdec_sharedlibrary.so:system/lib/libomx_m4vdec_sharedlibrary.so \
+    vendor/huawei/ascend/proprietary/lib/libomx_mp3dec_sharedlibrary.so:system/lib/libomx_mp3dec_sharedlibrary.so \
     vendor/huawei/ascend/proprietary/lib/libOmxMpeg4Dec.so:system/lib/libOmxMpeg4Dec.so \
-    vendor/huawei/ascend/proprietary/lib/libOmxVidEnc.so:system/lib/libOmxVidEnc.so
+    vendor/huawei/ascend/proprietary/lib/libomx_sharedlibrary.so:system/lib/libomx_sharedlibrary.so \
+    vendor/huawei/ascend/proprietary/lib/libomx_sharedlibrary_qc.so:system/lib/libomx_sharedlibrary_qc.so \
+    vendor/huawei/ascend/proprietary/lib/libOmxVidEnc.so:system/lib/libOmxVidEnc.so \
+    vendor/huawei/ascend/proprietary/lib/libOmxWmvDec.so:system/lib/libOmxWmvDec.so
 
 # Lights and graphics
-#PRODUCT_COPY_FILES += \
-#    vendor/huawei/ascend/proprietary/lib/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
-#    vendor/huawei/ascend/proprietary/lib/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so
+PRODUCT_COPY_FILES += \
+    vendor/huawei/ascend/proprietary/lib/hw/gralloc.default.so:system/lib/hw/gralloc.default.so \
+    vendor/huawei/ascend/proprietary/lib/hw/gralloc.msm7k.so:system/lib/hw/gralloc.msm7k.so \
+    vendor/huawei/ascend/proprietary/lib/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so
+
+# 3D
+PRODUCT_COPY_FILES += \
+    vendor/huawei/ascend/proprietary/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
 
 # Sensors
 PRODUCT_COPY_FILES += \
@@ -156,7 +173,12 @@ PRODUCT_COPY_FILES += \
 
 # GPS
 PRODUCT_COPY_FILES += \
-    device/huawei/ascend/include/etc/gps.conf:system/etc/gps.conf
+    device/huawei/ascend/include/etc/gps.conf:system/etc/gps.conf \
+    device/huawei/ascend/include/etc/loc_parameter.ini:system/etc/loc_parameter.ini \
+    vendor/huawei/ascend/proprietary/lib/libloc_api.so:system/lib/libloc_api.so \
+    vendor/huawei/ascend/proprietary/lib/libcommondefs.so:system/lib/libcommondefs.so \
+    vendor/huawei/ascend/proprietary/lib/libloc_api.so:system/lib/libloc_api.so \
+    vendor/huawei/ascend/proprietary/lib/libloc_api-rpc.so:system/lib/libloc_api-rpc.so
 
 # Proprietary RIL related
 PRODUCT_COPY_FILES += \
@@ -180,9 +202,9 @@ PRODUCT_COPY_FILES += \
     vendor/huawei/ascend/proprietary/lib/libqmi.so:system/lib/libqmi.so \
     vendor/huawei/ascend/proprietary/lib/libpbmlib.so:system/lib/libpbmlib.so \
     vendor/huawei/ascend/proprietary/bin/qmuxd:system/bin/qmuxd \
-    vendor/huawei/ascend/proprietary/bin/hci_qcomm_init:system/bin/hci_qcomm_init
-#    vendor/huawei/ascend/proprietary/lib/libril.so:system/lib/libril.so \
-#    vendor/huawei/ascend/proprietary/lib/libwpa_client.so:system/lib/libwpa_client.so \
+    vendor/huawei/ascend/proprietary/bin/hci_qcomm_init:system/bin/hci_qcomm_init \
+    vendor/huawei/ascend/proprietary/lib/libril.so:system/lib/libril.so \
+    vendor/huawei/ascend/proprietary/lib/libwpa_client.so:system/lib/libwpa_client.so \
 
 # OEM RPC
 PRODUCT_COPY_FILES += \
@@ -195,7 +217,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/huawei/ascend/modules/bcm4319.ko:system/lib/modules/bcm4319.ko \
     device/huawei/ascend/include/etc/firmware/fw_bcm4319.bin:system/etc/firmware/fw_bcm4319.bin \
-    device/huawei/ascend/include/etc/firmware/nvram.txt:system/etc/firmware/nvram.txt
+    device/huawei/ascend/include/etc/firmware/nvram.txt:system/wifi/nvram.txt
+
+# Apps
+PRODUCT_COPY_FILES += \
+    device/huawei/ascend/include/apps/CarHomeGoogle.apk:system/app/CarHomeGoogle.apk \
+    device/huawei/ascend/include/apps/LauncherPro.apk:system/app/LauncherPro.apk \
 
 $(call inherit-product, build/target/product/small_base.mk)
 
@@ -207,7 +234,11 @@ PRODUCT_MODEL := Huawei-M860
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-huawei-us \
     ro.com.google.locationfeatures=1 \
-    ro.cdma.home.operator.numeric=31016 \
+    ro.cdma.home.operator.numeric=310027 \
     ro.config.cdma_subscription=1 \
     ro.cdma.voicemail.number=mine \
-    ro.setupwizard.enable_bypass=1
+    ro.setupwizard.enable_bypass=1 \
+    gsm.sim.operator.alpha=android-huawei-us \
+    gsm.sim.operator.numeric=310027 \
+    gsm.operator.alpha=android-huawei-us \
+    gsm.operator.numeric=310027
